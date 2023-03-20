@@ -6,7 +6,7 @@
 
 const string MAIN_FUNCTIONS = "(0) Exit\n(1) Add car\n(2) Get car\n(3) Remove car\n(4) Update car\n"
                               "(5) Add instructor\n(6) Get instructor\n(7) Remove instructor\n(8) Update instructor\n"
-                              "(9) Count all cars\n(10) Count all instructors\n(11) Count all instructors for a specific car\n"
+                              "(9) Count all cars\n(10) Count all instructors\n(11) Show all instructors for a specific car\n"
                               "(12) Show all cars\n(13) Show all instructors";
 
 const string CAR_ID_REQUEST = "Enter car id: ";
@@ -89,7 +89,7 @@ void View::handleMainInput() {
     else if (userInput == "10")
         countAllInstructors();
     else if (userInput == "11")
-        countAllInstructorsForCar();
+        showAllInstructorsForCar();
     else if (userInput == "12")
         showAllCars();
     else if (userInput == "13")
@@ -200,10 +200,17 @@ void View::countAllInstructors() {
     cout << to_string(instructorService.countAllInstructors()) + " instructors in total" << endl;
 }
 
-void View::countAllInstructorsForCar() {
+void View::showAllInstructorsForCar() {
     int carId = readInt(CAR_ID_REQUEST);
-    cout << to_string(instructorService.countAllInstructorsForCar(carId)) + " instructors for car with id = " +
-            to_string(carId) << endl;
+    vector<Instructor> instructors = instructorService.getAllInstructorsForCar(carId);
+    if (instructors.empty()) {
+        cout << "No instructors for car with id = " << carId << endl;
+    }
+    else {
+        for (Instructor instructor: instructors) {
+            cout << instructor.toString() << endl;
+        }
+    }
 }
 
 void View::showAllCars() {

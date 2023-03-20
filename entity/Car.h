@@ -24,8 +24,6 @@ public:
     Car(long id, const char* brand, const char* model, int year) {
         this->id = id;
         strcpy(this->brand, brand);
-//        this->brand ;
-//        this->model = model.c_str();
         strcpy(this->model, model);
         this->year = year;
     }
@@ -81,7 +79,8 @@ public:
     }
 
     string toString() {
-        return to_string(id) + " " + brand + " " + model + " " + to_string(year) + "    " + to_string(instructorAddr) + "   " + to_string(enabled);
+//        return to_string(id) + " " + brand + " " + model + " " + to_string(year) + "    " + to_string(instructorAddr) + "   " + to_string(enabled);
+        return to_string(id) + " " + brand + " " + model + " " + to_string(year);
     }
 };
 

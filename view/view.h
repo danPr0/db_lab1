@@ -23,7 +23,7 @@ private:
 
     void countAllCars();
     void countAllInstructors();
-    void countAllInstructorsForCar();
+    void showAllInstructorsForCar();
 
     void showAllCars();
     void showAllInstructors();

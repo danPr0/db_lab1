@@ -19,7 +19,7 @@ public:
     bool deleteInstructor(int id, int carId);
     bool updateInstructor(Instructor instructor);
     int countAllInstructors();
-    int countAllInstructorsForCar(int carId);
+    vector<Instructor> getAllInstructorsForCar(int carId);
     list<Instructor> getAllInstructors();
 };
 

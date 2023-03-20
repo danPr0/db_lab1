@@ -1,32 +1,11 @@
-#include <vector>
-#include <iostream>
 #include "../service_header/InstructorService.h"
 
 bool InstructorService::saveInstructor(Instructor instructor) {
     instructor.setEnabled(true);
-//    Instructor instructorInDB = instructorRepository.getEntity(instructor.getId(), instructor.getCarId());
-////    cout << instructorInDB.toString() << endl;
-//    if (instructorInDB.getId() != 0) {
-////        if (instructorInDB.isEnabled())
-////            return false;
-////        else {
-////            cout << instructorRepository.getNumOfRows() << "101" << endl;
-////            instructorRepository.updateEntity(instructor);
-////            cout << instructorRepository.getNumOfRows() << "202" << endl;
-////            return true;
-////        }
-//        return false;
-//    }
     return instructorRepository.insertEntity(instructor);
 }
 
 Instructor InstructorService::getInstructor(int id, int carId) {
-//    Instructor instructor = instructorRepository.getEntity(id, carId);
-//    if (instructor.getId() != 0 && instructor.isEnabled())
-//        return instructor;
-//    else return {};
-//    Instructor instructor = instructorRepository.getEntity(id, carId);
-//    return instructor.getId() != 0 && instructor.isEnabled() ? instructor : Instructor();
     return instructorRepository.getEntity(id, carId);
 }
 
@@ -47,18 +26,11 @@ bool InstructorService::updateInstructor(Instructor instructor) {
 }
 
 int InstructorService::countAllInstructors() {
-    list<Instructor> instructors =instructorRepository.getAll();
-    int count = 0;
-    for (Instructor instructor : instructors) {
-        if (instructor.isEnabled())
-            count++;
-    }
-
-    return count;
+    return instructorRepository.getAll().size();
 }
 
-int InstructorService::countAllInstructorsForCar(int carId) {
-    return instructorRepository.getAllForCar(carId).size();
+vector<Instructor> InstructorService::getAllInstructorsForCar(int carId) {
+    return instructorRepository.getAllForCar(carId);
 }
 
 list<Instructor> InstructorService::getAllInstructors() {

@@ -80,8 +80,8 @@ public:
     }
 
     string toString() {
-        return to_string(id) + " " + email + " " + firstName + " " + secondName + " " + to_string(carId) + "  " +
-                to_string(enabled) + "     " + to_string(nextRecord);
+//        return to_string(id) + " " + email + " " + firstName + " " + secondName + " " + to_string(carId) + "  " + to_string(enabled) + "     " + to_string(nextRecord);
+        return to_string(id) + " " + email + " " + firstName + " " + secondName + " " + to_string(carId);
     }
 };
 
