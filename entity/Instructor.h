@@ -81,7 +81,8 @@ public:
 
     string toString() {
 //        return to_string(id) + " " + email + " " + firstName + " " + secondName + " " + to_string(carId) + "  " + to_string(enabled) + "     " + to_string(nextRecord);
-        return to_string(id) + " " + email + " " + firstName + " " + secondName + " " + to_string(carId);
+        return "Id: " + to_string(id) + " Email: " + email + " First Name: " + firstName + " Second Name: " + secondName
+                + " Car id: " + to_string(carId) + " Enabled:" + to_string(enabled) + " Address: " + to_string(address) + " Next Record: " + to_string(nextRecord);
     }
 };
 

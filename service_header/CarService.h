@@ -4,13 +4,13 @@
 #include <string>
 #include <list>
 #include "../entity/Car.h"
-#include "../repository_header/CarRepository.h"
+#include "../repository_header/Repository.h"
 
 using namespace std;
 
 class CarService {
 private:
-    CarRepository carRepository;
+    Repository repository;
 public:
     bool saveCar(Car car);
     Car getCar(int id);

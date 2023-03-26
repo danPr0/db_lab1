@@ -80,7 +80,8 @@ public:
 
     string toString() {
 //        return to_string(id) + " " + brand + " " + model + " " + to_string(year) + "    " + to_string(instructorAddr) + "   " + to_string(enabled);
-        return to_string(id) + " " + brand + " " + model + " " + to_string(year);
+        return "Id: " + to_string(id) + " Brand: " + brand + " Model: " + model + " Year: " + to_string(year)
+                + " Is enabled: " + to_string(enabled) + " Instructor addr: " + to_string(instructorAddr);
     }
 };
 

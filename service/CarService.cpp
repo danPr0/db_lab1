@@ -3,27 +3,27 @@
 bool CarService::saveCar(Car car) {
     car.setEnabled(true);
     car.setInstructorAddr(0);
-    return carRepository.insertEntity(car);
+    return repository.insertCarEntity(car);
 }
 
 Car CarService::getCar(int id) {
-    return carRepository.getEntity(id);
+    return repository.getCarEntity(id);
 }
 
 bool CarService::deleteCar(int id) {
-    return carRepository.deleteEntity(id);
+    return repository.deleteCarEntity(id);
 }
 
 bool CarService::updateCar(Car car) {
     car.setEnabled(true);
-    return carRepository.updateEntity(car, true);
+    return repository.updateCarEntity(car, true);
 }
 
 int CarService::countAllCars() {
-    return carRepository.getAll().size();
+    return repository.getAllCars().size();
 }
 
 list<Car> CarService::getAllCars() {
-    return carRepository.getAll();
+    return repository.getAllCars();
 }
 

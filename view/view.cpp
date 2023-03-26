@@ -64,6 +64,7 @@ string readStringWithDefault(string msg, string presetValue) {
 }
 
 void View::handleMainInput() {
+    cout << "========================================================================" << endl;
     string userInput = readString(MAIN_FUNCTIONS);
 
     if (userInput == "0")

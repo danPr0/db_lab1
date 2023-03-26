@@ -7,12 +7,11 @@
 
 #include <list>
 #include "../entity/Instructor.h"
-#include "../repository_header/InstructorRepository.h"
+#include "../repository_header/Repository.h"
 
 class InstructorService {
 private:
-    CarRepository carRepository;
-    InstructorRepository instructorRepository;
+    Repository repository;
 public:
     bool saveInstructor(Instructor instructor);
     Instructor getInstructor(int id, int carId);
